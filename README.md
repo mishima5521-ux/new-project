@@ -6,7 +6,7 @@ Claude Code のサブエージェント機能を使った、専属の「秘書�
 
 | 名前 | ファイル | 役割 |
 | --- | --- | --- |
-| `secretary` | [.claude/agents/secretary.md](.claude/agents/secretary.md) | メールの要約・返信下書き、カレンダー管理、タスク整理、議事録・報告書などの文書作成 |
+| `secretary` | [.claude/agents/secretary.md](.claude/agents/secretary.md) | Outlook メールの要約・返信下書き、カレンダー管理、タスク整理、議事録・報告書などの文書作成 |
 | `machining-advisor` | [.claude/agents/machining-advisor.md](.claude/agents/machining-advisor.md) | 工法選定、切削条件、工具・治具、難削材、トラブル対策、図面・公差、見積・原価、品質・改善の相談 |
 
 ## 使い方
@@ -25,6 +25,7 @@ machining-advisor で、A7075 のポケット加工（深さ 30mm）の工具と
 ## 補足
 
 - **秘書の安全ルール**：メールの送信・削除、カレンダー予定の作成・変更などは、必ず内容を提示して承認を得てから実行します（基本は下書きまで）。
-- **Gmail / Google カレンダー連携**：秘書がメールや予定を扱うには、Claude 側で Gmail と Google Calendar のコネクタが接続されている必要があります。
+- **メールは Outlook のみ**：秘書が確認するメールは Outlook だけです（Gmail は使いません）。claude.ai の「設定 → コネクタ」で **Microsoft 365** コネクタを接続してください。
+- **カレンダー**：予定の確認・登録には Google Calendar コネクタを使います。
 - **切削条件について**：アドバイザーが示す数値は出発点です。工具メーカーの推奨値と試し削りで確認してください。
 - 口調・専門分野・会社固有のルール（標準チャージ、使用設備、得意材料など）は、各 `.md` ファイルの本文を編集すればカスタマイズできます。
